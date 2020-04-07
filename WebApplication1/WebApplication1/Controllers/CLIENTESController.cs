@@ -61,7 +61,7 @@ namespace WebApplication1.Controllers
                 var e = Session["email"].ToString();
                 msg.To.Add(e);
                 msg.Subject = "Bienvenido a la familia de ADUservice";
-                msg.Body = "Aduservice";
+                msg.Body = "Bienvenido a Nuestra familia de ADUservice es un gusto servirle";
                 MailAddress ms = new MailAddress(e);
                 msg.CC.Add(ms);
                 SmtpClient sc = new SmtpClient("smtp.gmail.com");
@@ -73,12 +73,10 @@ namespace WebApplication1.Controllers
                 db.CLIENTES.Add(cLIENTES);
                
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Login", "Home");
                
             }
-
-            ViewBag.SUCURSAL = new SelectList(db.SUCURSAL, "ID_SUCURSAL", "NOMBRE", cLIENTES.SUCURSAL);
-            return View(cLIENTES);
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: CLIENTES/Edit/5

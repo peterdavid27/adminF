@@ -68,7 +68,7 @@ namespace WebApplication1.Controllers
            
                 db.RECEPCION.Add(rECEPCION);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("busquedafilter");
 
               
             }
